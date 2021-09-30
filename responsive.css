@@ -3,7 +3,7 @@
     body {
         flex-direction: column;
         height: auto;
-        padding: 100px;
+        padding: 60px;
     }
   
     main {
@@ -11,12 +11,15 @@
         width: auto;
     }
 
-    #data, #result {
-        padding: 10px;
+    #data {
+        padding: 0px;
+    }
+
+    #result {
+        padding: 40px;
     }
 
     #gridButtons {
-
         grid-template-columns: 1fr 1fr;
       }
   }

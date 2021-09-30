@@ -20,9 +20,9 @@
   }
 
   body {
-    background-color: var(--text-cyan);
+    background-color: var(--light-gray);
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     height: 100vh;
@@ -37,6 +37,11 @@
     padding: 30px;
     place-items: center;
     width: 900px;
+  }
+
+  nav h2 {
+    color: var(--cyan);
+    line-height: 1em;
   }
 
   #data {
@@ -85,6 +90,8 @@
     width: 100%;
     padding: 10px;
     text-align: end;
+    border-radius: 10px;
+
   }
 
   #gridButtons  label {
