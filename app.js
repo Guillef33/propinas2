@@ -3,8 +3,6 @@ let porcentajeActual = 0;
 let bill = document.getElementById("bill");
 let numberPeople = document.getElementById("numberPeople");
 
-//   let billPercentaje  = document.getElementById('gridButtons').value; // no funciona
-
 bill.value = 0;
 numberPeople.value = 0;
 
@@ -39,7 +37,7 @@ function validarCampos() {
     } 
   */
 
-  errorBill.style.display = bill.value == 0 ? "block" : "none";
+  errorBill.style.display = bill.value == 0 ? "block" : "none"; // operador ternario del if 
 
   /* 
     if( numberPeople.value === 0 ){
@@ -115,7 +113,7 @@ inputCustom.addEventListener("change", function (e) {
     actualizarResultado();
   });
 
-//   function cambiarPorcentaje(decimal){
+//   function cambiarPorcentaje(decimal){ Esta la saque para ir directo con porcentajeActual
 //     porcentajeActual = decimal;
 //   }
 
@@ -136,11 +134,6 @@ const actualizarResultado = () => {
   totalPerPerson.innerHTML = `$${propinaDisplay}`;
   totalAmount.innerHTML = `$${propinaTotalDisplay}`;
 };
-
-//resultado.addEventListener("click", actualizarResultado);
-
-// validarCampos();
-// completarData();
 
 resetButton.addEventListener("click", function () {
   totalPerPerson.innerHTML = "$0.00";
