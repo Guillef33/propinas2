@@ -10,4 +10,13 @@
         grid-template-columns: 1fr;
         width: auto;
     }
+
+    #data, #result {
+        padding: 10px;
+    }
+
+    #gridButtons {
+
+        grid-template-columns: 1fr 1fr;
+      }
   }
