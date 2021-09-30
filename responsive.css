@@ -1,0 +1,13 @@
+
+@media screen and (max-width: 760px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding: 100px;
+    }
+  
+    main {
+        grid-template-columns: 1fr;
+        width: auto;
+    }
+  }
