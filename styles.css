@@ -181,7 +181,14 @@
   #errorPersonas {
     display: none;
   }
-
+  .bill-wrapper{
+    position: relative;
+  }
+  .bill-icon{
+   position: absolute;
+   top: 12px;
+   left: 5px;
+  }
 
 
   .attribution { font-size: 11px; text-align: center; }

@@ -52,7 +52,10 @@ function validarCampos() {
 
   errorPersonas.style.display = numberPeople.value == 0 ? "block" : "none";
 }
-
+bill.addEventListener("change", (e) => {
+  validarCampos();
+  actualizarResultado();
+});
 numberPeople.addEventListener("change", (e) => {
   validarCampos();
   actualizarResultado();
@@ -102,25 +105,28 @@ button50.addEventListener("click", function () {
   });
   button50.classList.add("active");
   // cambiarPorcentaje("0.5");
-
   porcentajeActual = 0.5;
   actualizarResultado();
 });
 
+// Hay que ver como ordenar el custom dentro de los buttons
+
 inputCustom.addEventListener("change", function (e) {
-    porcentajeActual = e.target.value; //esto es lo mismo que inputCustom.value
-    console.log(e.target.value)
+    porcentajeActual = inputCustom.value/100; //esto es lo mismo que inputCustom.value
+    // console.log(e.target.value)
+    buttons.forEach((element) => {
+      element.classList.remove("active");
+    });
     actualizarResultado();
   });
 
-//   function cambiarPorcentaje(decimal){ Esta la saque para ir directo con porcentajeActual
-//     porcentajeActual = decimal;
-//   }
+  /*function cambiarPorcentaje(decimal){ Esta la saque para ir directo con porcentajeActual
+    porcentajeActual = decimal;
+  }*/
 
 const actualizarResultado = () => {
   console.log(porcentajeActual);
-  totalPerPerson.innerHTML = "$0.00";
-  totalAmount.innerHTML = "$0.00";
+
 
   validarCampos();
 
@@ -130,9 +136,19 @@ const actualizarResultado = () => {
   let propinaDisplay = propinaPorPersona.toFixed(2);
   let propinaTotalDisplay = propinaTotal.toFixed(2);
 
+  totalPerPerson.innerHTML = "$0.00";
+  totalAmount.innerHTML = "$0.00";
+
   // Display Propona
+  console.log(bill.value);
+  console.log(numberPeople.value);
+  console.log(porcentajeActual);
+
+  if(bill.value > 0 && numberPeople.value > 0 && porcentajeActual > 0){
+
   totalPerPerson.innerHTML = `$${propinaDisplay}`;
   totalAmount.innerHTML = `$${propinaTotalDisplay}`;
+  }
 };
 
 resetButton.addEventListener("click", function () {
